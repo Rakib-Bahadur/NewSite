@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Item Listings</title>
+  </head>
+  <body>
+    <div id="content">
+        <h4>20 most recent article</h4>
+        <ol>
+            {% for article in object_list %}
+                <li>
+                    <span>
+                        <a href="{{article.url}}">{{article.title}}</a>
+                        <i>by</i> {{article.author| default_if_none:"Unknown"}} <i>published on</i> {{article.published_at}}
+                        <i>in</i> {{article.source.name}}
+                    </span>
+                </li>
+            {% endfor %}
+        </ol>
+    </div>
+  </body>
+</html>
