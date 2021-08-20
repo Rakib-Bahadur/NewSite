@@ -7,6 +7,8 @@ Please add a file named ".env" to `/newsite` directory under project root with f
 ENDPOINT = https://newsapi.org/v2/everything?q=tesla&sortBy=publishedAt&pageSize=100&page=1 
 API_KEY = :Your api key:
 ```
+Notes: The original endpoint `/articles` was not working on `newsapi.org`
+
 
 ## Project Setup
 Note: Assuming that `Python` with version >=3.8.0 is already installed
