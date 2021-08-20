@@ -23,13 +23,13 @@ class SourceSerializer(serializers.ModelSerializer):
 
 class ArticleSerializer(serializers.ModelSerializer):
     source = SourceSerializer()
-    author = serializers.CharField(allow_null=True)
-    title = serializers.CharField(allow_null=True)
-    description = serializers.CharField(allow_blank=True)
+    author = serializers.CharField(allow_blank=True, allow_null=True)
+    title = serializers.CharField(allow_blank=True, allow_null=True)
+    description = serializers.CharField(allow_blank=True, allow_null=True)
     url = serializers.URLField()
     urlToImage = serializers.CharField(source="url_to_image", allow_null=True)
     publishedAt = serializers.DateTimeField(source="published_at")
-    content = serializers.CharField(allow_null=True)
+    content = serializers.CharField(allow_blank=True, allow_null=True)
 
     class Meta:
         # list_serializer_class = ArticleListSerializer
